@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : my_config_sniper.xml
+    Created on : 12:23 AM 3/28/2013
+    Author     : Andrei DAIAN
+    Description: 
+		This is the input file for the Sniper Simulator
+-->
+
+<design_space>
+	<simulator name="FalseSimulator" type="simulator" >        
+    </simulator>
+	
+    <database ip="127.0.0.1" port="80" name="fadse_db" user="root" password="andrei" />
+	
+    <benchmarks>
+        <item name="splash2-barnes"/>
+	<!--<item name="splash2-fft"/>-->
+    </benchmarks>
+	
+    <metaheuristic name="CNSGAII" config_path="configs/cnsgaii.properties" />
+	
+    <parameters>
+        <parameter name="num_cores" description="Number of Cores" type="exp2" min="1" max="128" />
+		<parameter name="logical_cpus" description="Number of SMT threads per core" type="exp2" min="1" max="32" />
+	
+    </parameters>
+	
+    <system_metrics>
+		<system_metric name="cpi" type="float" desired="small" />
+		<system_metric name="area" type="float" desired="small" />
+		<system_metric name="peak_power" type="float" desired="small" />
+		<system_metric name="total_leakage" type="float" desired="small" />
+		<system_metric name="peak_dynamic" type="float" desired="small" />
+		<system_metric name="subthreshold_leakage" type="float" desired="small" />
+		<system_metric name="gate_leakage" type="float" desired="small" />
+		<system_metric name="runtime_dynamic" type="float" desired="small" />
+    </system_metrics>
+	
+    <rules>
+	<rule name="l1">
+		<greater>
+			<parameter name="num_cores"/>
+			<parameter name="logical_cpus"/>
+		</greater>
+	</rule>
+    </rules>
+	
+    <relations>   
+    </relations>
+    
+    <output output_path="d:\raduFalse" />
+</design_space>

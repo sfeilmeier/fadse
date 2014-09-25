@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : fems_energy_production.xml
+    Created on : Sept 24, 2014, 2:25 PM
+    Author     : Stefan Feilmeier
+    Description:
+        Input file for problem: Prediction of Energy Production
+-->
+<design_space>
+	<simulator name="ServerSimulator" type="simulator" ><!--type="synthetic"--><!--type can be synthetic or simulator-->
+		<parameter name="maximumTimeOfASimulation" value="10" /><!--in minutes-->
+		<parameter name="realSimulator" value="FEMSSimulator" />
+		<parameter name="simulator_output_file" value="D:\Dokumente\ULB Sibiu\fadse\run_#\results.txt" />
+		<parameter name="percent_training_data" value="70" />
+	</simulator>
+	<benchmarks>
+		<item name="fems6" />
+		<item name="fems7" />
+		<!-- <item name="Demo_mag2_modif.m;Demo_therm2_modif.m" /> -->
+	</benchmarks>
+	<database ip="localhost" port="3306" name="fems_energy_production" user="fadse" password="EN5mLOIAE4LpBTdpXWIb"/>
+	<metaheuristic name="NSGAII" config_path="configs/nsgaii.properties" />
+	<parameters>
+		<parameter name="resolution" description="Data from InfluxDB is averaged over _resolution_ minutes" type="integer" min="1" max="60" />
+		<parameter name="neurons" description="Number of neurons" type="integer" min="1" max="9999" />
+		<!-- last two digits = number of neurons in hidden layer 1; digits 3 and 4 from end = number of neurons in hidden layer 2 -->
+	</parameters>
+	<system_metrics>
+		<system_metric name="prediction_error" type="float" unit="" desired="small" />
+	</system_metrics>
+	<rules>
+	</rules>
+	<relations>
+	</relations>
+	<output output_path="D:\Dokumente\ULB Sibiu\fadse" />
+</design_space>
