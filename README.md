@@ -1,13 +1,13 @@
 # FADSE
 ## Framework for Automatic Design Space Exploration
 
-Note: This github project is a fork from https://code.google.com/p/fadse/. I, Stefan Feilmeier, migrated the project to [Maven](http://maven.apache.org/), did some housekeeping and restructuring of the source code into the _ro.ulbsibiu.fadse_ namespace and am developing a simulator to optimize prediction accuracy for [FEMS](https://fenecon.de/de/Stromspeicher#FEMS).  All credits for FADSE go to the original authors.
+Note: This github project is a fork from https://code.google.com/p/fadse/. I, Stefan Feilmeier, migrated the project to [Maven](http://maven.apache.org/), restructured the source code into _ro.ulbsibiu.fadse_ namespace, did some housekeeping and am developing a simulator to optimize prediction accuracy for [FEMS](https://fenecon.de/de/Stromspeicher#FEMS).  All credits for FADSE go to the original authors.
 
 From the original project description:
 
 **FADSE** - Framework for Automatic Design Space Exploration. This framework is trying to include as much ADSE algorithms as possible, to offer connectors to existing computer simulators (M5, GEMS, Multi2sim, NS3, etc.) and to run in parallel the design space exploration process.
 
-**If you are using FADSE in your research please cite my PhD thesis: Horia Calborean - "Multi-Objective Optimization of Advanced Computer Architectures using Domain-Knowledge" PhD Thesis, “L. Blaga” University of Sibiu, November 25th 2011 (PhD supervisor: prof. univ. dr. ing. Lucian Vintan) [Thesis](http://webspace.ulbsibiu.ro/horia.calborean/papers/thesis/Thesis%20-%20Horia%20Calborean.pdf) [BibTex](http://webspace.ulbsibiu.ro/horia.calborean/bibtex/calborean_thesis_2011.bib)
+**If you are using FADSE in your research please cite my PhD thesis: Horia Calborean - "Multi-Objective Optimization of Advanced Computer Architectures using Domain-Knowledge" PhD Thesis, “L. Blaga” University of Sibiu, November 25th 2011 (PhD supervisor: prof. univ. dr. ing. Lucian Vintan) [Thesis](http://webspace.ulbsibiu.ro/horia.calborean/papers/thesis/Thesis%20-%20Horia%20Calborean.pdf) [BibTex](http://webspace.ulbsibiu.ro/horia.calborean/bibtex/calborean_thesis_2011.bib)**
 
 FADSE is currently able to:
 * perform automatic design space exploration using well known algorithms (tested with NSGA-II, SPEA2, SMPSO, OMOPSO; other available are: AbYSS, PESA2, FastPGA and many others from the [jMetal](http://jmetal.sourceforge.net/index.html) library)
@@ -73,7 +73,7 @@ FADSE runs as a server and one or many clients. While the server is handling the
 
 ### Define your problem
 
-Create a configuration file in configs. In this example: "fems_energy_production.xml"
+* Create a configuration file in configs. In this example: "fems_energy_production.xml"
 
 ### Configure the algorithm
 
@@ -81,5 +81,5 @@ Create a configuration file in configs. In this example: "fems_energy_production
 
 ### Start the simulation
 
-Run the Boot-class with parameter "client"
-Run the Boot-class with parameter "fems_energy_production.xml"
+* Run the Boot-class with parameter "client"
+* Run the Boot-class with parameter "fems_energy_production.xml"
